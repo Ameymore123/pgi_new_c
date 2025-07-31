@@ -1,0 +1,2742 @@
+/* Basic Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #000;
+    overflow-x: hidden;
+
+
+    background-image: url('static/newbedroom.jpg');
+    background-size: cover;
+    /* makes sure it covers entire viewport */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    /* makes it fixed to viewport */
+}
+
+
+
+
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+
+/* Hero Section Styles (Your existing code) */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #30424C;
+    z-index: 1;
+}
+
+.hero-section>* {
+    z-index: 2;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 55.9%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+
+}
+
+.logo img {
+    height: 130px;
+    margin-left: -193px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #ddd;
+}
+
+.nav-menu li:not(:last-child)::after {
+    content: '+';
+    margin-left: 5px;
+    font-size: 0.8em;
+    vertical-align: middle;
+    opacity: 0.8;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.hero-content-wrapper {
+    z-index: 2;
+    max-width: 45%;
+    padding-right: 40px;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 3.8em;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    color: #efb790;
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    opacity: 0.85;
+    line-height: 1.7;
+    color: #fff;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #fff;
+    color: #000;
+}
+
+.primary-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #eee;
+}
+
+.hero-image {
+    z-index: 2;
+    max-width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    perspective: 1000px;
+    /* For the 3D effect */
+}
+
+.hero-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transform: rotateX(15deg) rotateY(-20deg) rotateZ(10deg);
+    transition: transform 1s;
+}
+
+.hero-image img:hover {
+    transition: transform 1s;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+/* Responsive adjustments for Hero Section */
+@media (max-width: 1024px) {
+    .nav-menu ul {
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content-wrapper {
+        max-width: 55%;
+        padding-right: 20px;
+    }
+
+    .hero-image {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 100px 5% 50px;
+    }
+
+    .hero-content-wrapper {
+        max-width: 90%;
+        padding-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        width: 70%;
+        max-width: 300px;
+    }
+
+    .hero-image {
+        max-width: 90%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+}
+
+/* About Us Section Styles */
+.about-section {
+    background-color: #30424C;
+    /* Dark background to match theme */
+    padding: 80px 5%;
+    /* Top/bottom padding, horizontal matches hero */
+    display: flex;
+    flex-direction: row;
+    /* Default layout: image on left, text on right */
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    /* Space between image and text */
+    color: black;
+    /* Default text color */
+}
+
+.about-image-wrapper {
+    flex: 1;
+    /* Takes available space */
+    max-width: 45%;
+    /* Controls image width */
+    position: relative;
+    border-radius: 10px;
+    /* Applied to the wrapper for overall shape */
+    overflow: visible;
+    /* Important to allow image overlap outside wrapper's bounds */
+
+    transform: scale(1);
+    transition: transform 0.5s ease;
+
+}
+
+.about-image-wrapper:hover {
+    transform: scale(1.02);
+    /* Slight scale on hover for engagement */
+
+}
+
+/* Image Collage container for 3 images */
+.image-collage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns for top images */
+    grid-template-rows: auto auto;
+    /* Two rows, one for top, one for bottom */
+    gap: 20px;
+    /* Space between grid items */
+    position: relative;
+    /* For z-index and potential finer positioning */
+    padding-bottom: 30px;
+    /* Ensure space for bottom image's shadow/overlap */
+}
+
+.image-collage img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    /* Fixed height for consistent look */
+    object-fit: cover;
+    /* Cover the area, cropping if necessary */
+    border-radius: 8px;
+    /* Slightly smaller radius for individual images */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    /* Individual image shadow */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-collage .img-top-left:hover {
+    transform: translateY(-5px) scale(1.6) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    /* Lift and slightly scale on hover */
+    filter: brightness(1.1) saturate(1.1);
+    /* Enhance color on hover */
+    transform-style: preserve-3d;
+    transition: transform 1s, filter 1s, z-index 0s;
+    z-index: 1000;
+
+}
+
+
+.image-collage .img-top-right:hover {
+    transform: translateY(-5px) scale(1.6) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    /* Lift and slightly scale on hover */
+    filter: brightness(1.1) saturate(1.1);
+    /* Enhance color on hover */
+    transform-style: preserve-3d;
+    transition: transform 1s, filter 1s, z-index 0s;
+    z-index: 1000;
+}
+
+
+.image-collage .img-bottom:hover {
+    transform: translateY(-5px) scale(1.6) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    /* Lift and slightly scale on hover */
+    filter: brightness(1.1) saturate(1.1);
+    /* Enhance color on hover */
+    transform-style: preserve-3d;
+    transition: transform 1s, filter 1s, z-index 0s;
+    z-index: 1000;
+}
+
+
+
+
+.image-collage .img-top-left {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 2;
+    /* Ensure it's not buried by the right image initially */
+    transform: rotate(-3deg);
+    /* Slight rotation for a dynamic feel */
+    transform-origin: bottom left;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(-10deg);
+    transition: transform 1s;
+    margin-left: 75px;
+    scale: 1.2;
+}
+
+.image-collage .img-top-right {
+    grid-column: 2;
+    grid-row: 1;
+    z-index: 3;
+    /* Appears on top of the left image */
+    margin-left: -50px;
+    /* Overlap effect */
+    transform: rotate(2deg);
+    /* Slight rotation */
+    transform-origin: bottom right;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(10deg);
+    transition: transform 1s;
+    margin-left: -75px;
+    scale: 1.2;
+}
+
+.image-collage .img-bottom {
+    grid-column: 1 / span 2;
+    /* Spans both columns */
+    grid-row: 2;
+    z-index: 1;
+    /* Appears behind the overlapping top images */
+    margin-top: -30px;
+    /* Slight overlap with the bottom of top images */
+    transform: scale(1.05);
+    /* Slightly larger for prominence */
+    width: 60%;
+    object-fit: cover;
+    margin-left: 16%;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    transition: transform 1s;
+    margin-top: -115px;
+
+}
+
+
+
+@keyframes gather {
+    0% {
+        transform: translateY(0px) translateX(-650px) rotate(0deg);
+    }
+
+    20% {
+        transform: translateY(0px) translateX(0px) rotate(-360deg);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        /* Change scaleX to 1 */
+    }
+}
+
+
+.about-content {
+    flex: 1;
+    max-width: 45%;
+    text-align: left;
+    opacity: 0;
+    /* Hidden initially for animation */
+    /* transform-origin: left; -- REMOVED: Not needed for clip-path */
+
+    animation: revealFromLeft 1s ease-out;
+    /* New animation name */
+    animation-timeline: view();
+    /* Trigger animation when element enters viewport */
+    animation-range: entry 25% cover 40%;
+    /* Adjust as needed for desired scroll trigger */
+    animation-fill-mode: forwards;
+    /* Element stays in its final animated state */
+}
+
+
+@keyframes revealFromLeft {
+    0% {
+        clip-path: inset(0 100% 0 0);
+        /* Clip 100% from the right, hiding content */
+        opacity: 0;
+        /* Start completely transparent */
+    }
+
+    100% {
+        clip-path: inset(0 0% 0 0);
+        /* Clip 0% from the right, fully revealing content */
+        opacity: 1;
+        /* End fully opaque */
+    }
+}
+
+.about-content h2 {
+    font-size: 3em;
+    color: #efb790;
+    /* Matching heading color */
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.about-content h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: #efb790;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-content h2:hover::after {
+    transform: scaleX(1);
+}
+
+.about-content p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(239, 183, 144, 0.2);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.stat-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #efb790;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Media Queries for About Section (Adjusted for new image structure) */
+@media (max-width: 992px) {
+    .about-section {
+        flex-direction: column;
+        padding: 60px 5%;
+    }
+
+    .about-image-wrapper {
+        max-width: 90%;
+        /* Allow wider image collage */
+        margin-bottom: 40px;
+        /* Reset overflow for smaller screens if collage needs to be contained */
+        overflow: hidden;
+    }
+
+    .about-content {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .about-content h2::after {
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        transform-origin: center;
+    }
+
+    .about-content h2:hover::after {
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .image-collage {
+        display: flex;
+        /* Switch to flexbox for simpler vertical stacking */
+        flex-direction: column;
+        align-items: center;
+        /* Center images when stacked */
+        gap: 20px;
+        padding-bottom: 0;
+        /* No need for bottom padding when stacked */
+    }
+
+    .image-collage img {
+        height: auto;
+        /* Allow height to adjust */
+        max-width: 80%;
+        /* Limit width of individual images */
+        margin: 0 !important;
+        /* Remove any negative margins from desktop layout */
+        transform: none !important;
+        /* Remove any rotations from desktop layout */
+        z-index: auto !important;
+        /* Reset z-index */
+    }
+}
+
+@media (max-width: 576px) {
+    .about-content h2 {
+        font-size: 2.2em;
+    }
+
+    .about-content p {
+        font-size: 0.95em;
+    }
+
+    .stat-number {
+        font-size: 2em;
+    }
+
+    .image-collage img {
+        max-width: 100%;
+        /* Full width on very small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* New Hero Section Styles */
+.hero-section-new {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align content to the start (left) */
+    padding: 0;
+    /* No direct padding on the section itself, content wrapper handles it */
+    color: #fff;
+    overflow: hidden;
+    /* Ensures background doesn't overflow */
+}
+
+.hero-section-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Background Image from Unsplash - Similar to your screenshot */
+
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Darken and desaturate the background image */
+
+    z-index: 1;
+}
+
+
+.hero-content-new-wrapper {
+    position: relative;
+    z-index: 2;
+    /* Ensures content is above the background */
+    max-width: 750px;
+    /* Control the width of the text content */
+    padding: 100px 5% 100px 10%;
+    /* Top, right, bottom, left padding for the content area */
+    /* Semi-transparent dark overlay for text readability */
+    height: 100vh;
+    /* Make wrapper full height to cover the left side */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Vertically center content inside wrapper */
+    text-align: left;
+}
+
+.hero-content-new h1 {
+    font-size: 3em;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #fff;
+    /* White heading */
+}
+
+.hero-content-new p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    line-height: 1.7;
+    color: #fff;
+    /* White paragraph text */
+}
+
+.btn-new {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.primary-btn-new {
+    background-color: #fff;
+    /* White button */
+    color: #000;
+    /* Black text */
+
+}
+
+.primary-btn-new:hover {
+    background-color: #000;
+    /* White button */
+    color: #fff;
+    /* Black text */
+}
+
+/* Responsive adjustments for the new hero section */
+@media (max-width: 1024px) {
+    .hero-content-new h1 {
+        font-size: 3em;
+    }
+
+    .hero-content-new-wrapper {
+        max-width: 500px;
+        padding-left: 8%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section-new {
+        justify-content: center;
+        /* Center content horizontally on smaller screens */
+        text-align: center;
+    }
+
+    .hero-content-new-wrapper {
+        max-width: 90%;
+        /* Allow content wrapper to take more width */
+        padding: 80px 5%;
+        /* Adjust padding for mobile */
+        height: auto;
+        /* Allow height to collapse to content */
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Slightly more opaque background on mobile */
+    }
+
+    .hero-content-new h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content-new p {
+        font-size: 1em;
+    }
+
+    .btn-new {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content-new h1 {
+        font-size: 2em;
+    }
+
+    .hero-content-new p {
+        font-size: 0.9em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Services Section (New) Styles --- */
+/* --- Dynamic Horizon Services Section Styles --- */
+/* --- Dynamic Horizon Services Section Styles (Modified for Background Images) --- */
+.dynamic-horizon-services {
+    position: relative;
+    background-color: #30424C;
+    /* Main background color */
+    padding: 100px 0;
+    /* Vertical padding */
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    /* Important for horizontal scrolling and transitions */
+    border-top: 5px double #efb790;
+}
+
+.services-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Background image with overlay and parallax */
+    /* If this specific overlay needs a background image, you'll need to lazy load it separately using JS or keep it as CSS background if it's critical. */
+    background-attachment: fixed;
+    z-index: 0;
+    /* Behind all content */
+    filter: brightness(0.6);
+    /* Subtle darkening */
+}
+
+.services-content-wrapper-horizon {
+    position: relative;
+    z-index: 1;
+    /* Above background overlay */
+    max-width: 1400px;
+    /* Overall content width */
+    margin: 0 auto;
+    padding: 0 5%;
+    /* Horizontal padding for the main content wrapper */
+}
+
+.dynamic-horizon-services h2 {
+    font-size: 3.5em;
+    color: #efb790;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px;
+    opacity: 0;
+    /* Initial state for animation */
+    animation: slideInTop 0.8s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+
+.dynamic-horizon-services h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100px;
+    height: 5px;
+    background-color: #efb790;
+    border-radius: 2.5px;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dynamic-horizon-services h2:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.services-intro-horizon {
+    font-size: 1.1em;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    line-height: 1.7;
+    opacity: 0;
+    /* Initial state for animation */
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+.horizon-container {
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+    padding-bottom: 20px;
+    /* Space for scrollbar */
+    cursor: grab;
+    /* Indicate draggable */
+    margin: 0 -5%;
+    /* Pull to edges to allow full width scrolling */
+    padding-left: 2%;
+    /* Add back padding for content */
+    padding-right: 2%;
+}
+
+/* Custom Scrollbar (Webkit browsers) */
+.horizon-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizon-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.horizon-container::-webkit-scrollbar-thumb {
+    background: rgba(239, 183, 144, 0.5);
+    /* Orange/gold thumb */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.horizon-container::-webkit-scrollbar-thumb:hover {
+    background: #efb790;
+    /* Brighter on hover */
+}
+
+.horizon-track {
+    display: flex;
+    gap: 20px;
+    /* Space between service blocks */
+    align-items: stretch;
+    /* Ensure blocks stretch to same height */
+    padding-bottom: 10px;
+    /* Prevents content from being hidden by scrollbar */
+}
+
+.service-block-horizon {
+    flex-shrink: 0;
+    /* Prevent blocks from shrinking */
+    width: 320px;
+    /* Initial compact width */
+    height: 400px;
+    /* Fixed height for consistency */
+    background-color: rgba(255, 255, 255, 0.08);
+    /* Initial background color, will be covered by image */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(239, 183, 144, 0.2);
+    position: relative;
+    /* Needed for absolute positioning of background image */
+    overflow: hidden;
+    /* Hide overflowing content initially */
+    cursor: pointer;
+    transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        background-color 0.4s ease,
+        /* Keep for non-image parts or fallback */
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease;
+    /* Added transform for subtle lift */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Push header to top, details to bottom */
+    padding: 30px;
+    /* Initial padding */
+    z-index: 1;
+    /* Ensure content is above the background image container */
+
+    /* Initial state for scroll animation */
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInAndSlideUp 0.8s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}
+
+/* Staggered animation for blocks */
+.service-block-horizon:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.service-block-horizon:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.service-block-horizon:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.service-block-horizon:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.service-block-horizon:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.service-block-horizon:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+
+/* NEW: Styles for the background image container */
+.block-background-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* No background-image here anymore */
+    opacity: 0;
+    /* Hidden initially */
+    transition: opacity 0.6s ease;
+    z-index: -1;
+    /* Place behind other content */
+    overflow: hidden;
+    /* Important to clip the image within */
+}
+
+/* NEW: Style the img tag within the container */
+.block-background-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container without distortion */
+    object-position: center;
+    /* Centers the image within the container */
+    display: block;
+    /* Removes extra space below image */
+    filter: brightness(1);
+    /* Initial brightness for the image itself */
+    transition: filter 0.6s ease;
+    /* Transition for brightness change */
+}
+
+/* NEW: Dark overlay for text readability over the image */
+.block-background-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.474);
+    /* Strong dark overlay */
+    opacity: 0;
+    /* Hidden initially */
+    transition: opacity 0.6s ease;
+    z-index: 1;
+    /* Ensure overlay is above the image but below content */
+}
+
+/* NEW: Show image and overlay when service block is active */
+.service-block-horizon.active .block-background-image-container {
+    opacity: 1;
+    /* Make the container (and thus the image) visible */
+}
+
+.service-block-horizon.active .block-background-image-container::before {
+    opacity: 1;
+    /* Show the overlay */
+}
+
+/* REMOVED: Specific background images for each block from CSS */
+/*
+.block-background-image-container.bg-1 {
+    background-image: url('static/furniture1.jpg');
+}
+.block-background-image-container.bg-2 {
+    background-image: url('static/furniture2.jpg');
+}
+.block-background-image-container.bg-3 {
+    background-image: url('static/furniture3.jpg');
+}
+.block-background-image-container.bg-4 {
+    background-image: url('static/furniture4.jpg');
+}
+.block-background-image-container.bg-5 {
+    background-image: url('static/lavish_livingroom.jpg');
+}
+.block-background-image-container.bg-6 {
+    background-image: url('static/newbedroom.jpg');
+}
+*/
+
+
+/* Active state (expanded) */
+.service-block-horizon.active {
+    width: 600px;
+    /* Expanded width */
+    background-color: transparent;
+    /* Changed to transparent so image is visible */
+    border-color: #efb790;
+    /* Highlighted border */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    /* Subtle lift */
+}
+
+/* Dimming for inactive blocks */
+.horizon-track.active-mode .service-block-horizon:not(.active) {
+    opacity: 0.4;
+    /* Dim inactive blocks */
+    filter: grayscale(50%) brightness(0.8);
+    transform: scale(0.95);
+    /* Slightly shrink inactive blocks */
+    pointer-events: none;
+    /* Disable interaction on dimmed blocks */
+}
+
+.horizon-track.active-mode .service-block-horizon:not(.active) .block-details {
+    opacity: 0;
+    /* Ensure details are hidden on inactive blocks */
+}
+
+
+.block-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align content to left */
+    text-align: left;
+    transition: transform 0.6s ease;
+    /* For header movement on active */
+    position: relative;
+    /* Ensure header content is above the image */
+    z-index: 2;
+    /* Content is above image */
+}
+
+.service-block-horizon.active .block-header {
+    transform: translateY(-20px);
+    /* Move header up when expanded */
+}
+
+.block-number {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
+    /* Subtle number */
+    margin-bottom: 10px;
+    transition: color 0.4s ease;
+}
+
+.service-block-horizon.active .block-number {
+    color: rgba(255, 255, 255, 0.6);
+    /* Slightly brighter when active */
+}
+
+.block-icon {
+    font-size: 4em;
+    /* Large icon */
+    color: #efb790;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.service-block-horizon.active .block-icon {
+    transform: scale(1.1) rotateY(10deg);
+    /* Subtle icon animation */
+    color: #fff;
+}
+
+.block-title {
+    font-size: 2em;
+    font-weight: 600;
+    color: #fff;
+    white-space: normal;
+    /* Prevent wrapping initially */
+    margin-bottom: 0;
+    /* No margin here, handled by block-details top margin */
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.service-block-horizon.active .block-title {
+    color: #efb790;
+    transform: translateY(-5px);
+    /* Lift title slightly */
+    white-space: nowrap;
+    /* Force to one line when active/expanded */
+    max-height: none;
+    /* Remove height constraint when expanded */
+    overflow: visible;
+    /* Ensure all content is visible when expanded */
+}
+
+.block-details {
+    opacity: 0;
+    /* Hidden initially */
+    max-height: 0;
+    /* For height transition */
+    overflow: hidden;
+    padding-top: 0;
+    /* No padding initially */
+    transition: opacity 0.6s ease 0.2s, max-height 0.8s ease 0.2s, padding-top 0.8s ease 0.2s;
+    text-align: left;
+    /* Align text within details */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    /* Ensure details content is above the image */
+    z-index: 2;
+    /* Content is above image */
+}
+
+.service-block-horizon.active .block-details {
+    opacity: 1;
+    max-height: 200px;
+    /* Sufficient height to show content */
+    padding-top: 20px;
+    /* Add padding when expanded */
+}
+
+.block-details p {
+    font-size: 0.95em;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-secondary-horizon {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary-horizon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #eee;
+}
+
+/* Keyframe animations for scroll-driven effects */
+@keyframes slideInTop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInAndSlideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Media Queries for Dynamic Horizon Services */
+@media (max-width: 1200px) {
+    .service-block-horizon.active {
+        width: 500px;
+        /* Slightly smaller expanded width */
+    }
+}
+
+@media (max-width: 992px) {
+    .dynamic-horizon-services {
+        padding: 80px 0;
+    }
+
+    .services-content-wrapper-horizon {
+        padding: 0 3%;
+    }
+
+    .dynamic-horizon-services h2 {
+        font-size: 2.8em;
+    }
+
+    .services-intro-horizon {
+        font-size: 1em;
+        margin-bottom: 50px;
+    }
+
+    .horizon-track {
+        flex-direction: column;
+        /* Stack blocks vertically on smaller screens */
+        gap: 30px;
+        padding-bottom: 0;
+        /* No horizontal scrollbar */
+    }
+
+    .horizon-container {
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 auto;
+        /* Center the container */
+        max-width: 600px;
+        /* Limit width for stacked blocks */
+        cursor: default;
+        /* Remove grab cursor */
+    }
+
+    .horizon-container::-webkit-scrollbar {
+        display: none;
+        /* Hide scrollbar on vertical stack */
+    }
+
+    .service-block-horizon {
+        width: 100%;
+        /* Full width within container */
+        height: auto;
+        /* Allow height to adjust based on content */
+        min-height: 200px;
+        /* Minimum height when collapsed */
+        padding: 25px;
+        transition: min-height 0.6s ease, background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+    }
+
+    .service-block-horizon.active {
+        min-height: 400px;
+        /* Expanded height for mobile */
+        width: 100%;
+        /* Stays full width */
+    }
+
+    /* Reset dimming/scaling for inactive blocks on mobile */
+    .horizon-track.active-mode .service-block-horizon:not(.active) {
+        opacity: 1;
+        /* No dimming */
+        filter: none;
+        /* No grayscale/brightness */
+        transform: none;
+        /* No shrinking */
+        pointer-events: auto;
+        /* Enable interaction */
+    }
+
+    .block-header {
+        flex-direction: row;
+        /* Keep icon and title in a row */
+        justify-content: flex-start;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .service-block-horizon.active .block-header {
+        transform: none;
+        /* No vertical shift on mobile */
+    }
+
+    .block-number {
+        font-size: 2.5em;
+        margin-right: 15px;
+    }
+
+    .block-icon {
+        font-size: 3.5em;
+        margin-right: 15px;
+    }
+
+    .service-block-horizon.active .block-icon {
+        transform: none;
+        /* No 3D icon animation on mobile */
+    }
+
+    .block-title {
+        font-size: 1.7em;
+        white-space: normal;
+        /* Allow title to wrap on mobile */
+    }
+
+    .service-block-horizon.active .block-title {
+        transform: none;
+        /* No vertical shift on mobile */
+    }
+
+    .block-details {
+        max-height: 0;
+        /* Keep hidden by default */
+        opacity: 0;
+        padding-top: 0;
+        transition: opacity 0.6s ease, max-height 0.8s ease;
+        /* Simplified transition */
+    }
+
+    .service-block-horizon.active .block-details {
+        opacity: 1;
+        max-height: 300px;
+        /* Sufficient height for mobile content */
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dynamic-horizon-services h2 {
+        font-size: 2.2em;
+    }
+
+    .services-intro-horizon {
+        font-size: 0.95em;
+    }
+
+    .service-block-horizon {
+        min-height: 180px;
+    }
+
+    .service-block-horizon.active {
+        min-height: 350px;
+    }
+
+    .block-number {
+        font-size: 2em;
+    }
+
+    .block-icon {
+        font-size: 3em;
+    }
+
+    .block-title {
+        font-size: 1.5em;
+    }
+
+    .block-details p {
+        font-size: 0.9em;
+    }
+
+    .btn-secondary-horizon {
+        padding: 8px 20px;
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    .dynamic-horizon-services h2 {
+        font-size: 1.8em;
+    }
+
+    .services-intro-horizon {
+        font-size: 0.85em;
+    }
+
+    .service-block-horizon {
+        padding: 20px;
+    }
+
+    .block-number {
+        font-size: 2em;
+    }
+
+    .block-icon {
+        font-size: 2.5em;
+    }
+
+    .block-title {
+        font-size: 1.3em;
+    }
+}
+
+
+
+
+/*
+
+.containerforheadline{
+    height: 500px;
+    width: 100%;
+    background-color: #30424C;
+    color: #efb790;
+}
+
+.insidecontainer{
+    background: transparent;
+    width: 40%;
+    height: 100px;
+    margin-left: 9.8%;
+}
+
+.containerforheadline h1{
+    
+}
+
+*/
+
+
+
+.merge-container {
+    background-color: #30424C;
+}
+
+
+.heading-container {
+    height: 3000px;
+    width: 100%;
+    background-color: #30424C;
+    border-top: 5px double #efb790;
+    margin-top: 80px;
+}
+
+.grid-heading {
+    text-align: left;
+    font-size: 2.4em;
+    font-weight: 150;
+    color: #efb790;
+    margin-bottom: -72px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-left: 155px;
+    margin-top: 120px;
+    margin-bottom: -150px;
+    width: 50%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 765px);
+    grid-auto-rows: 200px;
+    grid-gap: 20px;
+    background-color: #30424C;
+    color: #efb790;
+    height: 2500px;
+}
+
+.card {
+    background-color: #30424C;
+    border-radius: 0px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    margin-top: 200px;
+    color: white;
+    /* Ensure content is clipped if it goes outside */
+    overflow: hidden;
+
+}
+
+.card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* Added for smooth transition */
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.card .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    /* Initially hidden */
+    opacity: 0;
+    /* Smooth transition for appearance */
+    transition: opacity 0.3s ease-in-out;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    /* Ensure content takes full width of the image */
+    box-sizing: border-box;
+    /* Include padding in width */
+}
+
+.card:hover .card-content {
+    opacity: 1;
+    /* Show on hover */
+}
+
+.card:hover img {
+    /* Slightly scale the image on hover for a subtle effect */
+    transform: scale(1.03);
+}
+
+.card h2 {
+    font-weight: 145;
+    line-height: 50px;
+    /* Text shadow for readability on image */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.card p {
+    margin-top: 10px;
+    /* Text shadow for readability on image */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.card span {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 1;
+    /* Ensure span is above the content */
+}
+
+
+/* Make cards vary in height to match your screenshot */
+/* Adjust these heights to control the overall size of each card and its contained image */
+.card:nth-child(1) {
+    grid-row: span 5;
+    width: 600px;
+    margin-left: 21%;
+    height: 80%;
+}
+
+/* Example adjusted height */
+.card:nth-child(2) {
+    grid-row: span 3;
+    width: 600px;
+    margin-right: 21%;
+    height: 415px;
+}
+
+/* Example adjusted height */
+.card:nth-child(2) img {
+    height: 100%;
+}
+
+/* Ensure image fills the new card height */
+.card:nth-child(3) {
+    grid-row: span 3;
+    width: 600px;
+    margin-right: 21%;
+    height: 415px;
+    margin-top: -17px;
+}
+
+/* Example adjusted height */
+.card:nth-child(3) img {
+    height: 100%;
+}
+
+.card:nth-child(4) {
+    grid-row: span 3;
+    width: 600px;
+    margin-left: 21%;
+    height: 415px;
+    margin-top: -15px;
+}
+
+/* Example adjusted height */
+.card:nth-child(4) img {
+    height: 100%;
+}
+
+.card:nth-child(5) {
+    grid-row: span 5;
+    width: 600px;
+    margin-right: 21%;
+    height: 80%;
+    margin-top: -235px;
+}
+
+/* Example adjusted height */
+.card:nth-child(6) {
+    grid-row: span 3;
+    width: 600px;
+    margin-left: 21%;
+    height: 415px;
+    margin-top: -230px;
+}
+
+/* Example adjusted height */
+.card:nth-child(6) img {
+    height: 100%;
+}
+
+.card:nth-child(7) {
+    grid-row: span 5;
+    width: 600px;
+    margin-left: 21%;
+    height: 80%;
+    margin-top: -445px;
+}
+
+/* Example adjusted height */
+.card:nth-child(8) {
+    grid-row: span 3;
+    width: 600px;
+    margin-right: 21%;
+    height: 415px;
+    margin-top: -440px;
+}
+
+/* Example adjusted height */
+.card:nth-child(8) img {
+    height: 100%;
+}
+
+.card:nth-child(9) {
+    grid-row: span 3;
+    width: 600px;
+    margin-right: 21%;
+    height: 415px;
+    margin-top: -660px;
+}
+
+/* Example adjusted height */
+.card:nth-child(9) img {
+    height: 100%;
+}
+
+@layer animation-enhancement {
+
+    /* SCROLL ANIMATION BASE */
+    .card {
+        view-timeline-name: --card-scroll;
+        view-timeline-axis: block;
+        animation-timeline: --card-scroll;
+        animation-range: entry 20% cover 40%;
+        animation-fill-mode: both;
+        transform-origin: center;
+    }
+
+    /* Base animation */
+    @keyframes fade-slide-up {
+        from {
+            opacity: 0;
+            transform: translateY(100px) scale(0.92) rotateX(10deg);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0);
+        }
+    }
+
+    /* Alternate cards get a FLIP-IN */
+    .card:nth-child(even) {
+        animation-name: flip-in;
+    }
+
+    @keyframes flip-in {
+        from {
+            opacity: 0;
+            transform: rotateY(90deg) scale(0.8);
+        }
+
+        to {
+            opacity: 1;
+            transform: rotateY(0deg) scale(1);
+        }
+    }
+
+    /* Feature cards get a ZOOM POP + ROTATION */
+    .card:nth-child(1),
+    .card:nth-child(5),
+    .card:nth-child(7) {
+        animation-name: zoom-pop;
+    }
+
+    @keyframes zoom-pop {
+        from {
+            opacity: 0;
+            transform: scale(0.7) rotate(-6deg) translateY(80px);
+            filter: brightness(0.5);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1) rotate(0deg) translateY(0);
+            filter: brightness(1);
+        }
+    }
+
+    /* Title flicker glow animation for luxury feel */
+    .card h2 {
+        animation: neon-glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes neon-glow {
+        from {
+            text-shadow: 0 0 5px #efb790, 0 0 10px #efb790, 0 0 15px #efb790;
+            color: #efb790;
+        }
+
+        to {
+            text-shadow: 0 0 8px #fff8ec, 0 0 18px #efb790, 0 0 28px #efb790;
+            color: #fff8ec;
+        }
+    }
+
+    /* Optional: Staggered Delay */
+    .card:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .card:nth-child(2) {
+        animation-delay: 0.05s;
+    }
+
+    .card:nth-child(3) {
+        animation-delay: 0.1s;
+    }
+
+    .card:nth-child(4) {
+        animation-delay: 0.15s;
+    }
+
+    .card:nth-child(5) {
+        animation-delay: 0.2s;
+    }
+
+    .card:nth-child(6) {
+        animation-delay: 0.25s;
+    }
+
+    .card:nth-child(7) {
+        animation-delay: 0.3s;
+    }
+
+    .card:nth-child(8) {
+        animation-delay: 0.35s;
+    }
+
+    .card:nth-child(9) {
+        animation-delay: 0.4s;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Contact Us Section Styles - Immersive Contact Hub --- */
+.contact-section {
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+    /* Slightly less than full height to show context */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    /* Vertical padding */
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    background-color: #30424C;
+}
+
+.contact-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #30424C;
+    background-attachment: fixed;
+    /* Parallax effect */
+    z-index: 0;
+    filter: brightness(0.7);
+    /* Subtle darkening */
+}
+
+.contact-content-wrapper {
+    position: relative;
+    z-index: 1;
+    /* Above background */
+    max-width: 1200px;
+    width: 90%;
+    /* Responsive width */
+    margin: 0 auto;
+    padding: 40px;
+    /* Padding inside the wrapper */
+    background-color: #30424C;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(239, 183, 144, 0.2);
+    /* Subtle accent border */
+
+    opacity: 0;
+    /* Initial state for animation */
+    transform: translateY(50px);
+    animation: fadeInAndSlideUp 1s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+.contact-header-lux {
+    margin-bottom: 50px;
+}
+
+.contact-header-lux h2 {
+    font-size: 3.2em;
+    color: #efb790;
+    /* Gold/orange accent */
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-header-lux h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: #efb790;
+    border-radius: 2px;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact-header-lux h2:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.contact-header-lux p {
+    font-size: 1.1em;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.contact-grid-lux {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /* Info on left, form on right, form slightly wider */
+    gap: 60px;
+    /* Space between columns */
+    text-align: left;
+}
+
+.contact-info-block,
+.contact-form-block {
+    background-color: #30424C;
+    /* Lighter translucent background for blocks */
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(239, 183, 144, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+    /* Initial state for animation */
+    transform: translateY(30px);
+    animation: fadeInAndSlideUp 0.8s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+
+.contact-info-block {
+    animation-delay: 0.2s;
+}
+
+/* Stagger animation */
+.contact-form-block {
+    animation-delay: 0.4s;
+}
+
+/* Stagger animation */
+
+
+.contact-info-block h3,
+.contact-form-block h3 {
+    font-size: 2em;
+    color: #efb790;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    /* Align icon and text to top */
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.info-icon {
+    font-size: 1.8em;
+    color: #fff;
+    /* White icons */
+    flex-shrink: 0;
+    /* Prevent icon from shrinking */
+    line-height: 1;
+    /* Align icon better with text */
+}
+
+.info-item p {
+    font-size: 1em;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    /* Center social icons */
+    padding-top: 20px;
+    /* Space from last info item */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle separator */
+}
+
+.social-icon {
+    font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands';
+    /* Specify Font Awesome font */
+    font-weight: 900;
+    /* For solid icons */
+    font-size: 1.8em;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #efb790;
+    /* Gold/orange on hover */
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Contact Form Styles */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: rgba(255, 255, 255, 0.08);
+    /* Slightly lighter input background */
+    border: 1px solid rgba(239, 183, 144, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #efb790;
+    /* Gold/orange border on focus */
+    background-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(239, 183, 144, 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #efb790;
+    /* Gold/orange button */
+    color: #000;
+    /* Black text */
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: auto;
+    /* Allow button to size to content */
+    display: block;
+    /* Make it a block element to take full width if needed, or center */
+    margin-left: auto;
+    /* Center if block, or align right */
+    margin-right: auto;
+}
+
+.submit-btn:hover {
+    background-color: #e08a0f;
+    /* Darker gold/orange */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Responsive Media Queries for Contact Section */
+@media (max-width: 992px) {
+    .contact-content-wrapper {
+        padding: 30px;
+        width: 95%;
+        /* Wider on smaller screens */
+    }
+
+    .contact-header-lux h2 {
+        font-size: 2.5em;
+    }
+
+    .contact-header-lux p {
+        font-size: 1em;
+    }
+
+    .contact-grid-lux {
+        grid-template-columns: 1fr;
+        /* Stack columns vertically */
+        gap: 40px;
+    }
+
+    .contact-info-block,
+    .contact-form-block {
+        padding: 25px;
+    }
+
+    .contact-info-block h3,
+    .contact-form-block h3 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .social-links {
+        justify-content: center;
+        /* Ensure centered on mobile */
+    }
+
+    .submit-btn {
+        width: 100%;
+        /* Full width button on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 0;
+        min-height: auto;
+        /* Allow height to adjust */
+    }
+
+    .contact-header-lux h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .contact-header-lux p {
+        font-size: 0.9em;
+    }
+
+    .info-item {
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+
+    .info-icon {
+        font-size: 1.5em;
+    }
+
+    .info-item p {
+        font-size: 0.9em;
+    }
+
+    .social-icon {
+        font-size: 1.5em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+
+    .submit-btn {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-content-wrapper {
+        padding: 20px;
+    }
+
+    .contact-header-lux h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-info-block h3,
+    .contact-form-block h3 {
+        font-size: 1.5em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Advanced Refined Footer Styles --- */
+
+.site-footer.advanced-footer {
+    position: relative;
+    /* Needed for absolute positioning of bg elements */
+    background-color: #000;
+    /* Deep black base */
+    color: #fff;
+    padding: 80px 5%;
+    /* Generous padding for breathing room */
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    /* Crucial to contain absolute positioned elements */
+    border-top: 5px solid #efb790;
+    /* Prominent accent line at the top */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    /* Ensure a minimum height for visual presence */
+}
+
+/* Subtle background image effect */
+.footer-bg-effect {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Replace with your own optimized image */
+    background-image: url('static/bathroom_interior_2.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(90%);
+    /* More grayscale for subtlety */
+    opacity: 0.08;
+    /* Very subtle, barely there */
+    z-index: 1;
+    /* Behind content */
+    animation: fadeInBackground 2s ease-out forwards;
+    /* Gentle animation on load */
+}
+
+/* Gradient overlay on top of the background image */
+.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(48, 66, 76, 0.9));
+    /* Deeper, richer gradient */
+    z-index: 2;
+    /* Between background and content */
+}
+
+/* Main content wrapper to ensure content is above overlays */
+.footer-content-wrapper {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    /* Responsive grid: auto-fit creates as many columns as fit, minmax sets size */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    /* Consistent gap between sections */
+    max-width: 1280px;
+    /* Aligns with potential main content width */
+    width: 100%;
+    /* Take full width within max-width */
+    margin-bottom: 50px;
+    /* Space above copyright section */
+    padding: 0 20px;
+    /* Horizontal padding for smaller screens */
+}
+
+/* Styling for each individual footer section */
+.footer-section {
+    padding: 25px;
+    /* More padding inside sections */
+    background-color: rgba(48, 66, 76, 0.6);
+    /* Semi-transparent dark blue/grey */
+    border-radius: 10px;
+    /* Slightly more rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    /* Deeper shadow for prominent look */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Smoother transform easing */
+    backdrop-filter: blur(3px);
+    /* Subtle blur for modern glass-like effect */
+    border: 1px solid rgba(239, 183, 144, 0.1);
+    /* Very subtle accent border */
+}
+
+.footer-section:hover {
+    transform: translateY(-8px);
+    /* More pronounced lift on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    /* Stronger shadow on hover */
+}
+
+/* Brand logo styling */
+.footer-brand-info .footer-logo {
+    font-size: 1.4em;
+    /* Larger logo */
+    color: #efb790;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(239, 183, 144, 0.8);
+    /* Stronger glow */
+    letter-spacing: 1px;
+    /* Slight letter spacing */
+    font-family: 'Rajdhani', sans-serif;
+
+}
+
+/* Brand description paragraph */
+.footer-brand-info p {
+    font-size: 0.98em;
+    /* Slightly larger text */
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+/* Section heading styles */
+.footer-section h4 {
+    font-size: 1.5em;
+    /* Larger headings */
+    color: #fff;
+    margin-bottom: 28px;
+    /* More space below heading */
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+    /* Space for underline */
+    letter-spacing: 0.8px;
+}
+
+/* Underline effect for footer headings */
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 65px;
+    /* Longer, more prominent underline */
+    height: 4px;
+    background-color: #efb790;
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(239, 183, 144, 0.6);
+    /* Subtle glow on underline */
+}
+
+/* Quick links list */
+.footer-quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-quick-links ul li {
+    margin-bottom: 15px;
+    /* More space between links */
+}
+
+.footer-quick-links ul li .footer-link {
+    color: #ddd;
+    /* Lighter text for links */
+    text-decoration: none;
+    font-size: 1.05em;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.footer-quick-links ul li .footer-link:hover {
+    color: #efb790;
+    transform: translateX(8px);
+    /* More pronounced slide effect */
+}
+
+/* Contact info details */
+.footer-contact-info p {
+    display: flex;
+    align-items: flex-start;
+    /* Align icon with top of text */
+    margin-bottom: 18px;
+    /* Space between contact lines */
+    color: #ddd;
+    font-size: 0.98em;
+}
+
+.footer-contact-info p i {
+    color: #efb790;
+    margin-right: 12px;
+    /* More space between icon and text */
+    font-size: 1.15em;
+    margin-top: 3px;
+    /* Adjust icon vertical alignment */
+}
+
+/* Social media icons container */
+.social-icons {
+    display: flex;
+    gap: 22px;
+    /* Slightly more space between icons */
+    margin-top: 30px;
+    /* More space above icons */
+}
+
+/* Individual social media icon link */
+.social-icons .social-icon-link {
+    color: #fff;
+    font-size: 2em;
+    /* Larger icons */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    /* Larger circular background */
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+
+    text-decoration: none;
+}
+
+.social-icons .social-icon-link:hover {
+    color: #efb790;
+    transform: scale(1.15) translateY(-5px);
+    /* Lift and enlarge */
+    box-shadow: 0 0 25px rgba(239, 183, 144, 0.8), 0 5px 15px rgba(0, 0, 0, 0.5);
+    /* Stronger glow and shadow */
+    background-color: rgba(239, 183, 144, 0.25);
+    /* More vibrant background on hover */
+    text-decoration: none;
+}
+
+/* --- Our Philosophy Section Styles --- */
+.footer-philosophy h4 {
+    font-size: 1.5em;
+    /* Consistent heading size */
+    color: #fff;
+    margin-bottom: 28px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+    letter-spacing: 0.8px;
+}
+
+.footer-philosophy h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 65px;
+    height: 4px;
+    background-color: #efb790;
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(239, 183, 144, 0.6);
+}
+
+.footer-philosophy p {
+    font-size: 0.98em;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 15px;
+    /* Space between paragraphs */
+}
+
+.footer-philosophy p.small-text {
+    font-size: 0.9em;
+    color: #bbb;
+    font-style: italic;
+    margin-top: 20px;
+    /* Space above this specific text */
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments for the new philosophy section */
+@media (max-width: 992px) {
+    .footer-philosophy {
+        text-align: center;
+        /* Center content when stacked */
+    }
+
+    .footer-philosophy h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Bottom copyright and design credit section */
+.footer-bottom {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: 60px;
+    /* More space from sections above */
+    padding-top: 30px;
+    /* Padding above the border */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    /* Clearer separator line */
+    font-size: 0.9em;
+    color: #bbb;
+    width: 100%;
+    max-width: 1280px;
+    line-height: 1.8;
+}
+
+.footer-bottom p:last-child {
+    margin-top: 10px;
+    font-size: 0.85em;
+    color: #aaa;
+}
+
+/* Keyframe for subtle background fade-in */
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.08;
+    }
+}
+
+/* --- Responsive Adjustments for Refined Footer --- */
+
+@media (max-width: 992px) {
+    .site-footer.advanced-footer {
+        padding: 70px 4%;
+        /* Adjust padding for medium screens */
+    }
+
+    .footer-content-wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* Allow columns to get slightly smaller */
+        gap: 35px;
+    }
+
+    /* Center section content when they wrap */
+    .footer-section {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Center heading underlines */
+    .footer-section h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Center social icons */
+    .footer-brand-info .social-icons {
+        justify-content: center;
+    }
+
+
+
+
+}
+
+@media (max-width: 768px) {
+    .site-footer.advanced-footer {
+        padding: 50px 3%;
+        /* Further adjust padding for tablets */
+    }
+
+    .footer-content-wrapper {
+        grid-template-columns: 1fr;
+        /* Stack all columns vertically */
+        gap: 30px;
+        /* Space between stacked sections */
+        padding: 0 15px;
+        /* Reduce horizontal padding */
+    }
+
+    .footer-section {
+        padding: 20px;
+        /* Reduce padding inside sections */
+    }
+
+    .footer-brand-info .footer-logo {
+        font-size: 2.5em;
+        /* Slightly smaller logo */
+    }
+
+    .footer-section h4 {
+        font-size: 1.4em;
+        /* Slightly smaller headings */
+    }
+
+    .social-icons .social-icon-link {
+        font-size: 1.8em;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer.advanced-footer {
+        padding: 40px 2%;
+        /* Minimum padding for small mobiles */
+    }
+
+    .footer-section {
+        padding: 18px;
+        /* Minimum padding */
+        border-radius: 8px;
+        /* Slightly less rounded */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        /* Lighter shadow */
+    }
+
+    .footer-brand-info .footer-logo {
+        font-size: 2.2em;
+    }
+
+    .footer-section h4 {
+        font-size: 1.25em;
+        margin-bottom: 20px;
+    }
+
+    .footer-section h4::after {
+        width: 50px;
+        /* Shorter underline */
+        height: 3px;
+    }
+
+    .social-icons .social-icon-link {
+        font-size: 1.5em;
+        width: 40px;
+        height: 40px;
+    }
+
+
+
+    .newsletter-form button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+        font-size: 0.8em;
+    }
+}
