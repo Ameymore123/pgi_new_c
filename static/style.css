@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 
 
-    background-image: url('static/newbedroom.jpg');
+    background-image: url('newbedroom.jpg');
     background-size: cover;
     /* makes sure it covers entire viewport */
     background-repeat: no-repeat;
